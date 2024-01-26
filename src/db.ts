@@ -19,7 +19,10 @@ const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}
   native: false,
 });
 
-initUser(sequelize);
+const initModels = () => {
+  initUser(sequelize);
+};
+initModels();
 
 const db = {
   conn: sequelize,

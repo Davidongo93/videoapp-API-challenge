@@ -4,7 +4,13 @@ class User extends Model {
   public id!: string;
   public email!: string;
   public password!: string;
+  
+  public validPassword(password: string) {
+    return this.getDataValue('password') === password;
+  }
+
 }
+
 
 const initUser = (sequelize: Sequelize) => {
   User.init(

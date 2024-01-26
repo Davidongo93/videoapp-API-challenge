@@ -1,16 +1,16 @@
-import jwt from 'jsonwebtoken';
-const secretKey = process.env.SECRET_JWT as string;
-/* const payload = { userId: '12345', username: 'usuarioEjemplo' };
-const token = jwt.sign(payload, secretKey);
+import { Request, Response } from 'express';
+import loginUser from '../controllers/user/authController';
 
-console.log('Token:', token,"secret:",secretKey);
+const loginUserHandler = async (req: Request, res: Response) => {
+  const { email, password } = req.body;
 
-// Ejemplo de verificación de un token
-try {
-  const decoded = jwt.verify(token, secretKey);
-  console.log('Decoded:', decoded);
-  Res.sendStatus(420);
-} catch (error:any) {
-  Res.sendStatus(401);
-  console.error('Error al verificar el token:', error.message);
-} */
+  const token = await loginUser(email, password);
+
+  if (token) {
+    res.status(200).json({ success: true, token });
+  } else {
+    res.status(401).json({ success: false, message: 'Invalid credentials' });
+  }
+};
+
+export default loginUserHandler;

@@ -1,9 +1,9 @@
-import { UserModel } from '../../models/user';
+import db from '../../db';
 import { UniqueConstraintError } from 'sequelize';
 
 const createUser = async (username: string, email: string, password: string) => {
   try {
-    return await UserModel.create({
+    return await db.models.User.create({
       username,
       email,
       password,
