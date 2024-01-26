@@ -1,6 +1,8 @@
 import { Sequelize } from 'sequelize';
 import dotenv from 'dotenv';
+
 import { initUser, UserModel } from './models/user';
+import { initVideo, VideoModel } from './models/video';
 
 dotenv.config();
 
@@ -21,13 +23,21 @@ const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}
 
 const initModels = () => {
   initUser(sequelize);
+  initVideo(sequelize);
+
+  const models: any = sequelize.models;
+  
+  models.User.hasMany(models.Video, { foreignKey: 'userId', as: 'videos' });
+  models.Video.belongsTo(models.User, { foreignKey: 'userId', as: 'user' });
 };
+
 initModels();
 
 const db = {
   conn: sequelize,
   models: {
     User: UserModel,
+    Video: VideoModel,
   },
 };
 
