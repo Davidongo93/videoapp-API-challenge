@@ -25,7 +25,6 @@ const postUsersHandler = async (req: Request, res: Response) => {
 
   try {
     const createUser = await newUser(username, email, password);
-    console.log('user created', createUser);
     const userWithoutPassword = { ...createUser.get(), password: "****" };
 
     return res.status(201).json({

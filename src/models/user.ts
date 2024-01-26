@@ -1,16 +1,16 @@
 import { DataTypes, Model, Sequelize } from 'sequelize';
-//TODO implement bcrypt
+// TODO implement bcrypt
 class User extends Model {
   public id!: string;
+  public username!: string;
   public email!: string;
   public password!: string;
-  
+  public deletedAt!: Date | null;
+
   public validPassword(password: string) {
     return this.getDataValue('password') === password;
   }
-
 }
-
 
 const initUser = (sequelize: Sequelize) => {
   User.init(
@@ -34,11 +34,16 @@ const initUser = (sequelize: Sequelize) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
+      deletedAt: {
+        type: DataTypes.DATE,
+        allowNull: true,
+      },
     },
     {
       sequelize,
       modelName: 'User',
       tableName: 'users',
+      paranoid: false,
     }
   );
 };
