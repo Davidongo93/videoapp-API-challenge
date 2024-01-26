@@ -11,8 +11,8 @@ db.conn
   .sync({ alter: true })
   .then(() => {
     console.log('Database synchronized successfully');
-    // Realiza otras operaciones si es necesario
-    return db.conn.authenticate(); // Verificar la autenticación
+   
+return db.conn.authenticate();
   })
   .then(() => {
     console.log('Database authenticated successfully');

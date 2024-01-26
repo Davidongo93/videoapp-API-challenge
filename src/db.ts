@@ -1,18 +1,10 @@
 import { Sequelize } from 'sequelize';
 import dotenv from 'dotenv';
+import { initUser, UserModel } from './models/user';
+
 dotenv.config();
 
-//const DB_DEPLOY: string = process.env.DB_DEPLOY || '';
-
-
-const {
-  DB_USER,
-  DB_PASSWORD,
-  DB_HOST,
-  DB_PORT,
-  DB_NAME,
-} = process.env;
-
+const { DB_USER, DB_PASSWORD, DB_HOST, DB_PORT, DB_NAME } = process.env;
 
 const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`, {
   dialect: 'postgres',
@@ -23,12 +15,17 @@ const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}
       rejectUnauthorized: false,
     },
   },
-  logging: true,
+  logging: false,
   native: false,
 });
 
+initUser(sequelize);
+
 const db = {
-    conn: sequelize,
-  };
-  
-  export default db;
+  conn: sequelize,
+  models: {
+    User: UserModel,
+  },
+};
+
+export default db;
