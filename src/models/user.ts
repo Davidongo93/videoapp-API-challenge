@@ -1,5 +1,5 @@
 import { DataTypes, Model, Sequelize } from 'sequelize';
-
+//TODO implement bcrypt
 class User extends Model {
   public id!: string;
   public email!: string;
@@ -13,6 +13,10 @@ const initUser = (sequelize: Sequelize) => {
         type: DataTypes.UUID,
         defaultValue: DataTypes.UUIDV4,
         primaryKey: true,
+        allowNull: false,
+      },
+      username: {
+        type: DataTypes.STRING,
         allowNull: false,
       },
       email: {
