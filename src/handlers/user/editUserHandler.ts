@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { body, validationResult } from 'express-validator';
-import editUserController from '../controllers/user/editUserController';
+import editUserController from '../../controllers/user/editUserController';
 
 const editUserHandler = async (req: Request, res: Response) => {
   const validationRules = [

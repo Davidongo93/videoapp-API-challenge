@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { body, validationResult } from 'express-validator';
-import newUser from '../controllers/user/newUser';
+import newUser from '../../controllers/user/newUser';
 
 const postUsersHandler = async (req: Request, res: Response) => {
   // TODO Highly recomended to ser a password policy (Not implemented yet)
