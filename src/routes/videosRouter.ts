@@ -1,12 +1,17 @@
 import { Router, Request, Response } from 'express';
 
 import authMiddleware from '../middleware/authMiddleware';
+
 import postVideoHandler from '../handlers/video/postVideoHandler';
 import editVideoHandler from '../handlers/video/editVideoHandler';
 import deleteVideoHandler from '../handlers/video/deleteVideoHandler';
+
 import getVideosByUserHandler from '../handlers/video/getVideosByUserHandler';
 import getPublicVideosHandler from '../handlers/video/getPublicVideosHandler';
 import getPrivateVideosHandler from '../handlers/video/getPrivateVideosHandler';
+
+
+import likeVideoHandler from '../handlers/video/likeVideoHandler';
 
 const videosRouter = Router();
 
@@ -22,6 +27,9 @@ videosRouter.get('/', (req: Request, res: Response) => {
   //GET videos
   videosRouter.get('/public', getPublicVideosHandler);
   videosRouter.get('/private', authMiddleware, getPrivateVideosHandler);
+  //videosRouter.get('/popular', getVideosByLikesHandler);
+  // Comments and reactions.
+  videosRouter.post('/:videoId/like', authMiddleware, likeVideoHandler);
  
 
 export default videosRouter;
