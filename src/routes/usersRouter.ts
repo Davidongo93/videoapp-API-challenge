@@ -1,7 +1,9 @@
 import { Router, Request, Response } from 'express';
+
+import authMiddleware from '../middleware/authMiddleware';
+
 import postUsersHandler from '../handlers/user/postUsersHandlers';
 import loginUserHandler from '../handlers/user/loginUserHandler';
-import authMiddleware from '../middleware/authMiddleware';
 import editUserHandler from '../handlers/user/editUserHandler';
 import deleteUserHandler from '../handlers/user/deleteUserHandler';
 
