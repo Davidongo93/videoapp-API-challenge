@@ -1,4 +1,6 @@
 import { DataTypes, Model, Sequelize } from 'sequelize';
+import { Comment } from './comment';
+import { Like } from './like';
 // TODO implement bcrypt
 class User extends Model {
   public id!: string;
@@ -10,6 +12,9 @@ class User extends Model {
   public validPassword(password: string) {
     return this.getDataValue('password') === password;
   }
+
+  public readonly comments?: Comment[];
+  public readonly likes?: Like[];
 }
 
 const initUser = (sequelize: Sequelize) => {

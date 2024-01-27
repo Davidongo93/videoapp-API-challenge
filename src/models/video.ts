@@ -1,5 +1,7 @@
 import { DataTypes, Model, Sequelize } from 'sequelize';
 import { User } from './user';
+import { Comment } from './comment';
+import { Like } from './like';
 
 class Video extends Model {
   public id!: string;
@@ -12,6 +14,8 @@ class Video extends Model {
 
 
   public readonly user?: User;
+  public readonly comments?: Comment[];
+  public readonly likes?: Like[];
 }
 
 const initVideo = (sequelize: Sequelize) => {
