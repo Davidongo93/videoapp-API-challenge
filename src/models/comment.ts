@@ -5,9 +5,7 @@ import { Video } from './video';
 class Comment extends Model {
   public id!: string;
   public content!: string;
-  public userId!: string;
-  public videoId!: string;
-
+ 
   public readonly user?: User;
   public readonly video?: Video;
 }

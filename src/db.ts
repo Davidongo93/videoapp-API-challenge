@@ -19,7 +19,7 @@ const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}
       rejectUnauthorized: false,
     },
   },
-  logging: false,
+  logging: console.log,
   native: false,
 });
 
@@ -32,20 +32,22 @@ const initModels = () => {
   const models: any = sequelize.models;
 
   
-  models.User.hasMany(models.Video, { foreignKey: 'userId', as: 'videos' });
-  models.Video.belongsTo(models.User, { foreignKey: 'userId', as: 'user' });
+// Modelo User
+models.User.hasMany(models.Video, { foreignKey: 'userId', as: 'videos' });
+models.Video.belongsTo(models.User, { foreignKey: 'userId', as: 'user' });
 
-  models.User.hasMany(models.Comment);
-  models.Comment.belongsTo(models.User);
+models.User.hasMany(models.Comment, { foreignKey: 'userId', as: 'comments' });
+models.Comment.belongsTo(models.User, { foreignKey: 'userId', as: 'user' });
 
-  models.Video.hasMany(models.Comment);
-  models.Comment.belongsTo(models.Video);
+models.Video.hasMany(models.Comment, { foreignKey: 'videoId', as: 'comments' });
+models.Comment.belongsTo(models.Video, { foreignKey: 'videoId', as: 'video' });
 
-  models.User.hasMany(models.Like);
-  models.Like.belongsTo(models.User);
+models.User.hasMany(models.Like);
+models.Like.belongsTo(models.User);
 
-  models.Video.hasMany(models.Like);
-  models.Like.belongsTo(models.Video);
+models.Video.hasMany(models.Like);
+models.Like.belongsTo(models.Video);
+
 };
 
 initModels();

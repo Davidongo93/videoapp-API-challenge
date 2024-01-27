@@ -1,4 +1,3 @@
-// En likeVideoHandler.ts
 import { Request, Response } from 'express';
 import likeVideoController from '../../controllers/video/likeVideoController';
 

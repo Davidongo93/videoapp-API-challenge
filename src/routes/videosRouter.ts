@@ -13,6 +13,7 @@ import getPrivateVideosHandler from '../handlers/video/getPrivateVideosHandler';
 
 import likeVideoHandler from '../handlers/video/likeVideoHandler';
 import getVideosByLikesHandler from '../handlers/video/getVideosByLikesHandler';
+import createCommentHandler from '../handlers/video/createCommentHandler';
 
 const videosRouter = Router();
 
@@ -31,6 +32,7 @@ videosRouter.get('/', (req: Request, res: Response) => {
   videosRouter.get('/popular',authMiddleware, getVideosByLikesHandler);
   // Comments and reactions.
   videosRouter.post('/:videoId/like', authMiddleware, likeVideoHandler);
+  videosRouter.post('/:videoId/comment', authMiddleware, createCommentHandler);
  
 
 export default videosRouter;
