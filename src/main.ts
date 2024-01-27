@@ -8,7 +8,7 @@ const host: string = process.env.HOST ?? 'localhost';
 const port: number = process.env.PORT ? Number(process.env.PORT) : 3000;
 
 db.conn
-  .sync({ force : true })
+  .sync({ alter : true })
   .then(() => {
     console.log('Database synchronized successfully');
    
