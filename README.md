@@ -38,8 +38,13 @@ Make sure you have the following installed:
    ```bash
    npm start
    ```
+The server will be running at `http://localhost:3000/`.
 
-2. The server will be running at `http://localhost:3000/`.
+2. Test
+   
+   ```bash
+   npm test
+   ```
 
 ### Endpoints
 
