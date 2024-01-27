@@ -1,0 +1,236 @@
+openapi: 3.0.3
+info:
+  title: videoapp-api-challenge
+  description: "This RESTful API was developed as part of the full-stack backend developer selection process, designed to assess the developer's skills. While its primary purpose is skill evaluation, it is freely available for use in frontend development or other applications. Feel free to utilize this API for personal projects or applications without any restrictions."
+  contact:
+    email: domirandar@unal.edu.co
+  version: 1.0.11
+
+servers:
+  - url: localhost:3000/
+tags:
+  - name: Users
+    description: Operations about users
+    
+    
+paths:
+
+  /users:
+    post:
+      tags:
+        - New user
+      summary: Create a new user in DB
+      description: Register in app.
+      operationId: postNewUser
+      requestBody:
+        description: Set your username, email, and password.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/postUserInput'
+        required: true
+      responses:
+        '201':
+          description: User Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostUserResponse'
+        '400':
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationError'
+        '409':
+          description: Conflict Email already exists.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictError'
+  /users/login:
+    post:
+      tags:
+        - Login user
+      summary: Login with email and password.
+      description: Sign in into API to get an Authorization Bearer token.
+      operationId: postLoginUser
+      requestBody:
+        description: email and password Input
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostLoginUserInput'
+        required: true
+      responses:
+        '200':
+          description: User logged in.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostLoginUserResponse'
+        '401':
+          description: Invalid Credentials
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostLoginUserInvalidCredentialsResponse'
+    put:
+      tags:
+        - Edit user Info
+      summary: Modify username or password.
+      description: with your Bearer token can access to edit info
+      operationId: PUT user
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: User logged in.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/'
+        '401':
+          description: Invalid Credentials
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/'
+
+components:
+  
+  schemas:
+    postUserInput:
+      type: object
+      properties:
+        username:
+          type: string
+          example: theUser
+        email:
+          type: string
+          example: john@email.com
+        password:
+          type: string
+          example: '12345'
+
+    PostUserResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          example: true
+        message:
+          type: string
+          example: User created successfully
+        data:
+          $ref: '#/components/schemas/PostUserData'
+
+    PostUserData:
+      type: object
+      properties:
+        id:
+          type: string
+          example: '6389a2df-e0a1-4bf5-9bca-5fef51024bd0'
+        username:
+          type: string
+          example: CypherBetray
+        email:
+          type: string
+          example: cypher@zion.org
+        password:
+          type: string
+          example: '****'
+        updatedAt:
+          type: string
+          example: '2024-01-27T18:23:25.814Z'
+        createdAt:
+          type: string
+          example: '2024-01-27T18:23:25.814Z'
+        deletedAt:
+          type: string
+          example: null
+          
+    ValidationError:
+      type: object
+      properties:
+        success:
+          type: boolean
+          example: false
+        message:
+          type: string
+          example: Validation error
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationErrorItem'
+
+    ValidationErrorItem:
+      type: object
+      properties:
+        type:
+          type: string
+          example: "field"
+        value:
+          type: string
+          example: ""
+        msg:
+          type: string
+          example: "Invalid value"
+        path:
+          type: string
+          example: "username"
+        location:
+          type: string
+          example: "body"
+          
+    ConflictError:
+      type: object
+      properties:
+        success:
+          type: boolean
+          example: false
+        message:
+          type: string
+          example: Internal Server Error
+        error:
+          type: string
+          example: Email already registered.
+          
+    PostLoginUserInput:
+      type: object
+      properties:
+        email:
+          type: string
+          example: john@email.com
+        password:
+          type: string
+          example: '12345'
+    
+    PostLoginUserResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          example: true
+        token:
+          type: string
+          example: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkNWUyNTI0Yy1iMjkyLTRlM2MtYjU3Zi0wODQ2ZjNkNWFkMTYiLCJpYXQiOjE3MDYzODc2MDEsImV4cCI6MTcwNjM5MTIwMX0.f1HGWZrcRTr1UE0dK6ob_MUSUAOLQbR1YMkw4cEWcQk"
+          
+    PostLoginUserInvalidCredentialsResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          example: false
+        token:
+          type: string
+          example: "Invalid credentials"
+
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+security:
+  - bearerAuth: [] 

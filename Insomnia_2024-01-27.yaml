@@ -1,0 +1,471 @@
+_type: export
+__export_format: 4
+__export_date: 2024-01-27T22:27:19.883Z
+__export_source: insomnia.desktop.app:v8.6.0
+resources:
+  - _id: req_30cf9ca8e14b4b83aa0a050b088dc00d
+    parentId: wrk_4e5b80137a2847abbca843542e81f6d2
+    modified: 1706372778881
+    created: 1706372702447
+    url: localhost:3000/video/popular
+    name: Videos by reactions
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/8.6.0
+        id: pair_b875140e908e428e96d2ca1be2523995
+      - id: pair_82fae8e8a594495b93e28c3eff825665
+        name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI4OTZhMjQ0NS0zMGIxLTQ5YTItOWVhZC00N2RmM2U2ZTVmMTIiLCJpYXQiOjE3MDYzNzIwMzgsImV4cCI6MTcwNjM3NTYzOH0.BmLKfrrHMVco_rLUanbZXr6JPqPOeGHfZn4WPFxYMjQ
+        description: ""
+    authentication: {}
+    metaSortKey: -1706372702447
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: wrk_4e5b80137a2847abbca843542e81f6d2
+    parentId: null
+    modified: 1706209264972
+    created: 1706209264972
+    name: videoApp-Backend-Challenge
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_cb0bf2febf224074abdb234942482623
+    parentId: wrk_4e5b80137a2847abbca843542e81f6d2
+    modified: 1706379898616
+    created: 1706371482185
+    url: localhost:3000/video/a97cd022-8db5-4edd-8689-457201d46a01/like
+    name: Video Reaction
+    description: ""
+    method: POST
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/8.6.0
+        id: pair_9ffd7e4abf82449ba7ef187afeec80fd
+      - id: pair_39dedf6ceaa54e3fb6ffd7e00667b645
+        name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Mzg5YTJkZi1lMGExLTRiZjUtOWJjYS01ZmVmNTEwMjRiZDAiLCJpYXQiOjE3MDYzNzk4MTgsImV4cCI6MTcwNjM4MzQxOH0.rKTTGge2rORIPoWao5TNOeGo9XL2FZxzlo9-gAsitX4
+        description: ""
+    authentication: {}
+    metaSortKey: -1706371482185
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_880afe3ffebe47b5abb84a2d602205f4
+    parentId: wrk_4e5b80137a2847abbca843542e81f6d2
+    modified: 1706379395387
+    created: 1706374677182
+    url: localhost:3000/video/093ebeb6-6931-413a-b316-f98fbed7fad6/comment
+    name: Video Comment
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"content": "nice Video, thanks 4 sharing."
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_48d98e64186b4ab7aafc5dc160c9fc28
+      - name: User-Agent
+        value: insomnia/8.6.0
+        id: pair_9ffd7e4abf82449ba7ef187afeec80fd
+      - id: pair_39dedf6ceaa54e3fb6ffd7e00667b645
+        name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxYWYwZjE0NS0wNTYwLTRhNmQtOGRjYS1lNmY4MmYwN2FjNTAiLCJpYXQiOjE3MDYzNzkxMTksImV4cCI6MTcwNjM4MjcxOX0.ee4sm6hF9zuO-0VR3UwzN7jKsi0CsoCHxmCeUc8Ew2M
+        description: ""
+    authentication: {}
+    metaSortKey: -1706370173909
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_5c6fe19dfaf745c2be55f80d341d00f5
+    parentId: wrk_4e5b80137a2847abbca843542e81f6d2
+    modified: 1706368906922
+    created: 1706368865633
+    url: localhost:3000/video/public
+    name: Public Videos
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/8.6.0
+    authentication: {}
+    metaSortKey: -1706368865633
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_68d74d97689e4bd4b4315b4482499539
+    parentId: wrk_4e5b80137a2847abbca843542e81f6d2
+    modified: 1706369449272
+    created: 1706369391610
+    url: localhost:3000/video/private
+    name: Private Videos
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/8.6.0
+        id: pair_43216bf59a9448ed8d1aab55b845ecf1
+      - id: pair_516d9d581a514fd5a1878a67badf10d2
+        name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkYzU3NjFhNS01NTE3LTQ2MDItYWI0Yi04OTc3OTQ3OTA2MWMiLCJpYXQiOjE3MDYzNjc0NTYsImV4cCI6MTcwNjM3MTA1Nn0.7FXixqP0iywHsY1lcFadXvu11oPrY874LKawOmyhPkk
+        description: ""
+    authentication: {}
+    metaSortKey: -1706368261606.5
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_5b5e533cd31f4419a7abc342ce94961f
+    parentId: wrk_4e5b80137a2847abbca843542e81f6d2
+    modified: 1706367833558
+    created: 1706367657580
+    url: localhost:3000/video/user/dc5761a5-5517-4602-ab4b-89779479061c
+    name: Videos By User (only users registered)
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/8.6.0
+        id: pair_9374f321e2df40658730eb239d504c30
+      - id: pair_3d3642aa58754886ba081f6e3e6c0295
+        name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkYzU3NjFhNS01NTE3LTQ2MDItYWI0Yi04OTc3OTQ3OTA2MWMiLCJpYXQiOjE3MDYzNjc0NTYsImV4cCI6MTcwNjM3MTA1Nn0.7FXixqP0iywHsY1lcFadXvu11oPrY874LKawOmyhPkk
+        description: ""
+    authentication: {}
+    metaSortKey: -1706367657580
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_ffb444a042b245c3a4fca4963f1c3f9f
+    parentId: wrk_4e5b80137a2847abbca843542e81f6d2
+    modified: 1706379851647
+    created: 1706356897434
+    url: localhost:3000/video/post
+    name: New Video
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "title": "Pranks Gone Wild",
+          "description": "A compilation of hilarious pranks caught on camera.",
+          "credits": "Credits: PranksterExtreme",
+          "isPublic": false,
+          "videoUrl": "https://www.funnyvideos.com/pranks-gone-wild.mp4"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_03d09e31ce8a4b0d96bb4b8146a6f177
+      - name: User-Agent
+        value: insomnia/8.6.0
+        id: pair_f106fc6c7b2f4bb99b12b8bdb6f14daf
+      - id: pair_4915efdfebb146c0b67480ada19108df
+        name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Mzg5YTJkZi1lMGExLTRiZjUtOWJjYS01ZmVmNTEwMjRiZDAiLCJpYXQiOjE3MDYzNzk4MTgsImV4cCI6MTcwNjM4MzQxOH0.rKTTGge2rORIPoWao5TNOeGo9XL2FZxzlo9-gAsitX4
+        description: ""
+    authentication: {}
+    metaSortKey: -1706356897434
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_499892489c5b4053aad8ea9f8befc455
+    parentId: wrk_4e5b80137a2847abbca843542e81f6d2
+    modified: 1706366036792
+    created: 1706365635722
+    url: localhost:3000/video/edit/c5686cf4-337f-4232-be3d-159c8ee6e731
+    name: Edit Video
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "title": "First video uploaded in collection",
+          "description": "El primer video en publicar de la plataforma",
+          "credits": "",
+          "isPublic": false,
+          "videoUrl": "https://www.eltubo.com/video.mp4"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_03d09e31ce8a4b0d96bb4b8146a6f177
+      - name: User-Agent
+        value: insomnia/8.6.0
+        id: pair_f106fc6c7b2f4bb99b12b8bdb6f14daf
+      - id: pair_4915efdfebb146c0b67480ada19108df
+        name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkYzU3NjFhNS01NTE3LTQ2MDItYWI0Yi04OTc3OTQ3OTA2MWMiLCJpYXQiOjE3MDYzNjU4ODUsImV4cCI6MTcwNjM2OTQ4NX0.wHiiwK4M_75ByYYH_VZQjl38pFiNCLCfxdLYrdOz-3k
+        description: ""
+    authentication: {}
+    metaSortKey: -1706356890842
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_50cb3dff499348baa8326333b180028a
+    parentId: wrk_4e5b80137a2847abbca843542e81f6d2
+    modified: 1706366085582
+    created: 1706366057756
+    url: localhost:3000/video/delete/c5686cf4-337f-4232-be3d-159c8ee6e731
+    name: Delete Video
+    description: ""
+    method: DELETE
+    body:
+      mimeType: application/json
+      text: ""
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_03d09e31ce8a4b0d96bb4b8146a6f177
+      - name: User-Agent
+        value: insomnia/8.6.0
+        id: pair_f106fc6c7b2f4bb99b12b8bdb6f14daf
+      - id: pair_4915efdfebb146c0b67480ada19108df
+        name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkYzU3NjFhNS01NTE3LTQ2MDItYWI0Yi04OTc3OTQ3OTA2MWMiLCJpYXQiOjE3MDYzNjU4ODUsImV4cCI6MTcwNjM2OTQ4NX0.wHiiwK4M_75ByYYH_VZQjl38pFiNCLCfxdLYrdOz-3k
+        description: ""
+    authentication: {}
+    metaSortKey: -1706356887546
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_e00e0db4976441629835376924a5586f
+    parentId: wrk_4e5b80137a2847abbca843542e81f6d2
+    modified: 1706394362826
+    created: 1706297076755
+    url: localhost:3000/users/delete
+    name: Delete User
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/8.6.0
+        id: pair_236e9904d7fb478a9158b407f670a243
+      - id: pair_4a17277f2d8f4f789c1077028b0b14a5
+        name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJmMTM2N2IwZC1jMjc3LTQ0MWEtYTFlNy1kMzQ1NGViOGQzZGMiLCJpYXQiOjE3MDYzNjA1MTgsImV4cCI6MTcwNjM2NDExOH0.hWG-2nZOmvr0gwSxcMEtIiQETZR9qeot2aZUpQW3G9o
+        description: ""
+    authentication: {}
+    metaSortKey: -1706297076755
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_c10dcf9ee62241938a1749d397a8d805
+    parentId: wrk_4e5b80137a2847abbca843542e81f6d2
+    modified: 1706394353744
+    created: 1706290115197
+    url: localhost:3000/users/edit
+    name: Edit User
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "username": "Dave Prueba el CRUD PUT",
+          "email": "domiran@darunal.edu.co",
+          "password": "Masqueaprobado"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_db0b98d10ea24c219b966d203dbe79b0
+      - name: User-Agent
+        value: insomnia/8.6.0
+        id: pair_a6a96e3e35cc4b0e96c0212e8abe1c6d
+      - id: pair_259d3265c1e54483bded15c8e0b7c34f
+        name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIyOTNkYjhkNi1iYjBiLTRjYWEtYTE5NC1lM2ZmOWRjOTc5ZmUiLCJpYXQiOjE3MDYzNjA2NjMsImV4cCI6MTcwNjM2NDI2M30.i_TboAZQMvPXS4WzILmJcIHGVsmGZE65DKvsrASu-6A
+        description: ""
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDYyOTI3MDQsImV4cCI6MTcwNjI5NjMwNH0.o5elGgRXeVzsN4jOUl1yQT0UmCxWSIdasJ42RCCqa8s
+      prefix: Bearer
+      disabled: true
+    metaSortKey: -1706290115197
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_3b652b8ddd5544cdb672817a8cea0c81
+    parentId: wrk_4e5b80137a2847abbca843542e81f6d2
+    modified: 1706385708182
+    created: 1706209270872
+    url: localhost:3000/users
+    name: New User
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "username": "CypherBetray",
+          "email": "cypher@zion.org",
+          "password": "doubleagent"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/8.6.0
+    authentication: {}
+    metaSortKey: -1706209270872
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_7249454af78f488e8a82dbb1e2a43183
+    parentId: wrk_4e5b80137a2847abbca843542e81f6d2
+    modified: 1706391754840
+    created: 1706283549649
+    url: localhost:3000/users/login
+    name: Login User
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "email": "neo@matrix.com",
+          "password": "chosen1"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/8.6.0
+    authentication: {}
+    metaSortKey: -1706029510358
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_1e64893ee22293f81a1254439a28e1879922fc38
+    parentId: wrk_4e5b80137a2847abbca843542e81f6d2
+    modified: 1706209264977
+    created: 1706209264977
+    name: Base Environment
+    data: {}
+    dataPropertyOrder: null
+    color: null
+    isPrivate: false
+    metaSortKey: 1706209264977
+    _type: environment
+  - _id: jar_1e64893ee22293f81a1254439a28e1879922fc38
+    parentId: wrk_4e5b80137a2847abbca843542e81f6d2
+    modified: 1706209264981
+    created: 1706209264981
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
