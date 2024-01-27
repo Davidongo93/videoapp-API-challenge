@@ -3,7 +3,7 @@ import deleteUserController from '../../controllers/user/deleteUserController';
 
 const deleteUserHandler = async (req:Request, res:Response) => {
     try {
-      const userId = req.user.dataValues.id;
+      const userId = req.user;
       
       await deleteUserController(userId);
       res.status(200).json({ success: true, message: 'User deleted successfully' });

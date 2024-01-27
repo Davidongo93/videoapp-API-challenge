@@ -21,7 +21,7 @@ const editUserHandler = async (req: Request, res: Response) => {
   }
 
   try {
-    const userId = req.user.dataValues.id;
+    const userId = req.user;
 
     await editUserController(userId, req.body);
 

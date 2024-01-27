@@ -26,12 +26,11 @@ const authMiddleware = async (req: Request, res: Response, next: NextFunction) =
     const userId = await db.models.User.findByPk(decoded.userId, {
         attributes: ['id'],
       });
-
     if (!userId) {
       return res.status(401).json({ success: false, message: 'Unauthorized user' });
     }
-
-    req.user = userId;
+    //get only the string id.
+    req.user = userId.dataValues.id;
     next();
   } catch (error) {
     console.error('Authentication error:', error);
