@@ -34,7 +34,7 @@ const postUsersHandler = async (req: Request, res: Response) => {
     });
   } catch (error: any) {
     console.error('Error creating new user:', error.message);
-    return res.status(500).json({
+    return res.status(409).json({
       success: false,
       message: 'Internal Server Error',
       error: error.message,
